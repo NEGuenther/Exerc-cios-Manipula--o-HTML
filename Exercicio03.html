@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Dinâmica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabela Dinâmica</h1>
+
+    <table id="tabela">
+        <tr>
+            <td>Linha 1, Coluna 1</td>
+            <td>Linha 1, Coluna 2</td>
+            <td>Linha 1, Coluna 3</td>
+        </tr>
+        <tr>
+            <td>Linha 2, Coluna 1</td>
+            <td>Linha 2, Coluna 2</td>
+            <td>Linha 2, Coluna 3</td>
+        </tr>
+        <tr>
+            <td>Linha 3, Coluna 1</td>
+            <td>Linha 3, Coluna 2</td>
+            <td>Linha 3, Coluna 3</td>
+        </tr>
+    </table>
+
+    <button onclick="adicionarLinha()">Adicionar Linha</button>
+
+    <script>
+        function adicionarLinha() {
+            const tabela = document.getElementById('tabela');
+            const novaLinha = tabela.insertRow();
+
+            for (let i = 0; i < 3; i++) {
+                const novaCelula = novaLinha.insertCell(i);
+                novaCelula.innerHTML = 'Nova Linha, Coluna ' + (i + 1);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com Lista, Div e Tabela</title>
+    <style>
+        *{font-weight: 900;}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            cursor: pointer;
+            background-color: rgb(184, 184, 184);
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #ff7300;
+            transition: 0,5s;
+        }
+
+        div {
+
+            width: 200px;
+            height: 100px;
+            background-color: rgb(184, 184, 184);
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        p {
+            margin-top: 20px;
+            text-align:center;
+            font-weight: 900;
+        }
+
+        div:hover {
+            background-color: #ff7300;
+            transition: 0,5s;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        td {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Interação com Elementos HTML</h1>
+
+    <!-- Lista de comidas favoritas -->
+    <ul>
+        <li onclick="mostrarAlerta('Pizza')">Pizza</li>
+        <li onclick="mostrarAlerta('Lasanha')">Lasanha</li>
+        <li onclick="mostrarAlerta('Sushi')">Sushi</li>
+        <li onclick="mostrarAlerta('Churrasco')">Churrasco</li>
+        <li onclick="mostrarAlerta('Sorvete')">Sorvete</li>
+    </ul>
+
+    <!-- Div com efeito hover -->
+    <div>
+        <p> Passe o mouse sobre mim!</p>
+    </div>
+
+    <!-- Tabela com 3 colunas e 3 linhas -->
+    <table>
+        <tr>
+            <td onclick="mudarCor(this)">Célula 1</td>
+            <td onclick="mudarCor(this)">Célula 2</td>
+            <td onclick="mudarCor(this)">Célula 3</td>
+        </tr>
+        <tr>
+            <td onclick="mudarCor(this)">Célula 4</td>
+            <td onclick="mudarCor(this)">Célula 5</td>
+            <td onclick="mudarCor(this)">Célula 6</td>
+        </tr>
+        <tr>
+            <td onclick="mudarCor(this)">Célula 7</td>
+            <td onclick="mudarCor(this)">Célula 8</td>
+            <td onclick="mudarCor(this)">Célula 9</td>
+        </tr>
+    </table>
+
+    <script>
+        function mudarCor(celula) {
+    if (celula.style.backgroundColor === 'red') {
+        celula.style.backgroundColor = 'white';
+    } else {
+        celula.style.backgroundColor = 'red';
+    }
+}
+
+    </script>
+
+</body>
+
+</html>

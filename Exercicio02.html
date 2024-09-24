@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com Campo de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        #conteudo, #tamanho {
+            margin-top: 10px;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interação com Campo de Texto</h1>
+
+    <label for="campoTexto">Digite algo:</label>
+    <input type="text" id="campoTexto" placeholder="Digite aqui" oninput="mostrarConteudo()">
+    <button onclick="mostrarTamanho()">Ver Tamanho</button>
+
+    <div id="conteudo"></div>
+
+    <div id="tamanho"></div>
+
+    <script>
+        function mostrarConteudo() {
+            const campoTexto = document.getElementById('campoTexto').value;
+            document.getElementById('conteudo').innerHTML = 'Conteúdo atual: ' + campoTexto;
+        }
+
+        function mostrarTamanho() {
+            const campoTexto = document.getElementById('campoTexto').value;
+            const tamanho = campoTexto.length;
+            document.getElementById('tamanho').innerHTML = 'O tamanho atual do campo é de: ' + tamanho + ' caracteres.';
+        }
+    </script>
+
+</body>
+</html>
